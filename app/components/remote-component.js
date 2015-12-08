@@ -1,0 +1,1 @@
+export { default } from 'ember-remote-component/components/remote-component';
