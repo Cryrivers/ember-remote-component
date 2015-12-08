@@ -1,16 +1,32 @@
 /* jshint node: true */
 'use strict';
-var Stew = require('broccoli-stew');
+var Funnel = require('broccoli-funnel');
+var MergeTrees = require('broccoli-merge-trees');
+
 module.exports = {
   name: 'ember-remote-component',
   isDevelopingAddon: function() {
     return true;
   },
-  preprocessTree(type, tree) {
+  postprocessTree(type, tree) {
     if (type === 'js') {
-      return Stew.rm(tree, '*/remote-components/**/*');
-    } else {
-      return tree;
+      var remoteComponentTree = new Funnel(tree, {
+        include: [
+            '*/remote-components/**/*'
+        ],
+        destDir: 'lalalala'
+      });
+      var normalAppTree = new Funnel(tree, {
+        exclude: [
+          '*/remote-components/**/*'
+        ]
+      });
+      return MergeTrees([normalAppTree, remoteComponentTree]);
     }
+    return tree;
+  },
+  treeForPublic(tree) {
+    console.log(tree);
+    return tree;
   }
 };
