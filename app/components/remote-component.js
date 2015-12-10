@@ -26,7 +26,8 @@ const RemoteComponent = Ember.Component.extend({
 });
 
 RemoteComponent.reopenClass({
-  positionalParams: ['componentName']
+  // Wait for HTMLBars splat operator
+  positionalParams: ['componentName', 'data']
 });
 
 export default RemoteComponent;
