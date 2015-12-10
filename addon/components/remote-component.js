@@ -13,7 +13,10 @@ const RemoteComponent = Ember.Component.extend({
     if (componentResolved) {
       this.set('isLoaded', true);
     } else {
-      $.getScript(`/remote-components/${ this.attrs.componentName }.js`).done(()=> {
+      $.when(
+        $.getScript(`/remote-components/${ this.attrs.componentName }/component.js`),
+        $.getScript(`/remote-components/${ this.attrs.componentName }/template.js`)
+      ).done(()=> {
         this.set('isLoaded', true);
       }).fail(()=>{
       });
