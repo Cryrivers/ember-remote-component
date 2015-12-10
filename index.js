@@ -51,9 +51,7 @@ module.exports = {
     }
     return tree;
   },
-  treeFor: function(name) {
-    if (name === 'public') {
-      return RemoteComponentFilter(remoteComponentTree);
-    }
+  treeForPublic: function() {
+    return RemoteComponentFilter(remoteComponentTree);
   }
 };
