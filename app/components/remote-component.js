@@ -17,9 +17,9 @@ const RemoteComponent = Ember.Component.extend({
           $.getScript(`/remote-components/${ this.attrs.componentName }/template.js`)
       ).done(()=> {
         let container = getOwner(this);
-        container.register(`component:${ this.attrs.componentName }`, require(`${ ENV.modulePrefix }/components/${ this.attrs.componentName }`).default, { singleton: false });
+        container.register(`component:${ this.attrs.componentName }`, require(`${ ENV.modulePrefix }/components/${ this.attrs.componentName }`).default, {singleton: false});
         this.set('isLoaded', true);
-      }).fail(()=>{
+      }).fail(()=> {
       });
     }
   }
