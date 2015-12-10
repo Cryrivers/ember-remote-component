@@ -1,7 +1,7 @@
 {
   "name": "ember-remote-component",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Lazy-load your Ember components",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/Rebelworks/ember-remote-component.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Andy 'C.Rivers' Wang (Rebelworks)",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
