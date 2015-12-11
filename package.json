@@ -1,6 +1,6 @@
 {
   "name": "ember-remote-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lazy-load your Ember components",
   "directories": {
     "doc": "doc",
