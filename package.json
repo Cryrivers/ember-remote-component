@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/Rebelworks/ember-remote-component.git",
+  "repository": "https://github.com/Cryrivers/ember-remote-component.git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.0.0"
   },
-  "author": "Andy 'C.Rivers' Wang (Rebelworks)",
+  "author": "Andy 'C.Rivers' Wang",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
