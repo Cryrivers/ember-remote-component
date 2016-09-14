@@ -1,7 +1,7 @@
 {{#if isLoaded}}
-    {{#component componentName data=data}}
-        {{yield}}
-    {{/component}}
+  {{#component componentName data=data}}
+    {{yield}}
+  {{/component}}
 {{else}}
-    <div class="ember-remote-component pending"></div>
+    <div class="{{if isFailed 'ember-remote-component--failed' 'ember-remote-component--loading'}}"></div>
 {{/if}}
