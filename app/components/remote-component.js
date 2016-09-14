@@ -1,3 +1,4 @@
+/* global require:false */
 import Ember from 'ember';
 import $ from 'jquery';
 import ENV from '../config/environment';
@@ -8,16 +9,17 @@ const RemoteComponent = Ember.Component.extend({
   isLoaded: false,
   didReceiveAttrs() {
     const container = getOwner(this);
-    const componentResolved = container.hasRegistration(`component:${ this.attrs.componentName }`);
+    const componentName = this.get('componentName');
+    const componentResolved = container.hasRegistration(`component:${ componentName }`);
     if (componentResolved) {
       this.set('isLoaded', true);
     } else {
       $.when(
-          $.getScript(`/remote-components/${ this.attrs.componentName }/component.js`),
-          $.getScript(`/remote-components/${ this.attrs.componentName }/template.js`)
+          $.getScript(`/remote-components/${ componentName }/component.js`),
+          $.getScript(`/remote-components/${ componentName }/template.js`)
       ).done(()=> {
         let container = getOwner(this);
-        container.register(`component:${ this.attrs.componentName }`, require(`${ ENV.modulePrefix }/components/${ this.attrs.componentName }`).default, {singleton: false});
+        container.register(`component:${ componentName }`, require(`${ ENV.modulePrefix }/components/${ componentName }`).default, {singleton: false});
         this.set('isLoaded', true);
       }).fail(()=> {
       });
