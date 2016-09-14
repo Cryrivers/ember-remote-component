@@ -1,6 +1,6 @@
 {
   "name": "ember-remote-component",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Lazy-load your Ember components",
   "directories": {
     "doc": "doc",
@@ -46,7 +46,7 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "broccoli-concat": "~0.0.13",
+    "broccoli-concat": "~2.3.4",
     "broccoli-filter": "^1.2.2",
     "broccoli-funnel": "^1.0.1",
     "broccoli-merge-trees": "^1.0.0"
